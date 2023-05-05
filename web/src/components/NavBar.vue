@@ -1,12 +1,13 @@
 <template>
-    <div class="navbar d-flex justify-content-center align-items-center p-3 gap-2">
-        <router-link 
+    <div class="navbar d-flex justify-content-start align-items-center p-3 gap-2">
+        <button
             v-for="link in navLinks" 
-            :to="link.path"
+            @click="navigate(link.path)"
             :key="link.name"
+            class="nav-btn"
         >
-            {{link.name}}
-        </router-link>
+            {{link.name.toUpperCase()}}
+        </button>
     </div>
 </template>
 <script>
@@ -16,6 +17,11 @@ export default {
     data() {
         return {
             navLinks: navigation,
+        }
+    },
+    methods: {
+        navigate(path) {
+            this.$router.push({path: path})
         }
     }
 }
@@ -28,5 +34,14 @@ export default {
   border-style: solid;
   overflow: hidden;
   width: 101%;
+}
+.nav-btn {
+    border: 0;
+    background-color: white;
+    font-weight: bold;
+
+    &:hover {
+        opacity: 50%;
+    }
 }
 </style>
