@@ -1,3 +1,5 @@
+import { BASE_URL } from "./constants"
+
 export async function request (url, params = {}) {
     params = Object.assign({
         mode: 'cors',
