@@ -15,7 +15,11 @@
                     type="password"
                     required
                 />
-                <button class="nav-btn" type="submit">
+                <button 
+                    class="nav-btn" 
+                    type="submit"
+                    @click="logIn"    
+                >
                     Log In
                 </button>
             </form>
@@ -23,7 +27,7 @@
             <button 
                 class="nav-btn" 
                 type="submit"
-                @click="logIn"
+                @click="signUp"
             >
                 Sign Up
             </button>
@@ -42,6 +46,11 @@ export default {
     methods: {
         logIn() {
             console.log('todologin')
+            console.log(this.emailLogin);
+            console.log(this.passwordLogin);
+        },
+        signUp() {
+            console.log('todosignup')
         }
     }
 }
