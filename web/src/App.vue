@@ -18,15 +18,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-.navbar {
-  background-color: white;
-  border-radius: 1px 0 0 0;
-  border-color: grey;
-  border-style: solid;
-  position: fixed;
-  overflow: hidden;
-  width: 101%;
-}
-</style>

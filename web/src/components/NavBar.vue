@@ -17,9 +17,16 @@ export default {
         return {
             navLinks: navigation,
         }
-    },
-    mounted() {
-        console.log(this.navLinks);
     }
 }
 </script>
+<style lang="scss">
+.navbar {
+  background-color: white;
+  border-radius: 1px 0 0 0;
+  border-color: grey;
+  border-style: solid;
+  overflow: hidden;
+  width: 101%;
+}
+</style>
