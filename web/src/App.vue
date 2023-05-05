@@ -1,20 +1,21 @@
 <template>
   <div>
     <div>
-      <div class="navbar d-flex justify-content-center align-items-center p-3 gap-2">
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
-      </div>
+      <NavBar/>
     </div>
-    <div class="mt-5">
+    <div class="container mt-3">
       <router-view />
     </div>
   </div>
 </template>
 
 <script>
+import NavBar from '@/components/NavBar.vue'
 export default {
   name: 'App',
+  components: {
+    NavBar,
+  },
 }
 </script>
 
