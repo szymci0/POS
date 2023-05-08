@@ -24,7 +24,15 @@ class User(models.BaseUser):
     @validator("created_at", pre=True, always=True)
     def default_created_at(cls, v):
         return v or datetime.now()
-    
+
+
+class UserCreate(models.BaseUserCreate):
+    @validator("password")
+    def valid_password(cls, v: str):
+        if len(v) < 4:
+            raise ValueError("Password too short(<4)")
+        return v
+
 
 class UserDB(models.BaseOAuthAccountMixin, User, models.BaseUserDB):
     pass
